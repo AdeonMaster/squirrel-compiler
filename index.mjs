@@ -7,7 +7,6 @@ const trimExtension = path => path.substring(0, path.lastIndexOf('.')) || path
 
 const compile = (srcFilePath) => new Promise((resolve) => {
   exec(`"./bin/sq_static.exe" -o "${srcFilePath}.sq" -c "${srcFilePath}.nut"`, (err, stdErr, stdOutput) => {
-    console.log(err || stdErr)
     resolve()
   })
 })
