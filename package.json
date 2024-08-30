@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.mjs",
   "scripts": {
-    "test": "node index.mjs --src input --dst output"
+    "test": "node index.mjs --src input --dst output",
+    "generate-binary": "node --experimental-sea-config sea-config.json && node -e \"require('fs').copyFileSync(process.execPath, 'run.exe')\" && \"./bin/signtool.exe\" remove /s run.exe && npx postject run.exe NODE_SEA_BLOB sea-prep.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2"
   },
   "author": "AdeonMaster",
   "license": "ISC",
